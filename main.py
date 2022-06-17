@@ -18,6 +18,7 @@ app = Flask(__name__)
 
 @app.route('/sms', methods=['GET', 'POST'])
 def message():
+    time.sleep(5)
     incomingNum = request.form.get('From')
     print(incomingNum)
     message_body = request.form.get('Body')
@@ -27,15 +28,15 @@ def message():
 def messageAnalysis(incomingNum, message):
     if (incomingNum == myNum):
         print(message, "\n")
-        if(message == 'shutdown'):
+        if(message == 'Shutdown'):
             shutdown()
-        elif(message == 'restart'):
+        elif(message == 'Restart'):
             restart()
-        elif(message == 'sleep'):
+        elif(message == 'Sleep'):
             sleep()
-        elif(message == 'launchLeague'):
+        elif(message == 'LaunchLeague'):
             launchLeague()
-        elif(message == 'launchApex'):
+        elif(message == 'LaunchApex'):
             launchApex()
 
     
