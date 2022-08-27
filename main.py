@@ -19,15 +19,16 @@ app = Flask(__name__)
 @app.route('/sms', methods=['GET', 'POST'])
 def message():
     time.sleep(5)
-    incomingNum = request.form.get('From')
-    print(incomingNum)
-    message_body = request.form.get('Body')
-    print(message_body)
+    incomingNum = request.values.get('From')
+    #print(incomingNum)
+    message_body = request.values.get('Body')
+    #print(message_body)
     messageAnalysis(incomingNum, message_body)
+    return "message_body"
 
 def messageAnalysis(incomingNum, message):
     if (incomingNum == myNum):
-        print(message, "\n")
+        #print(message, "\n")
         if(message == 'Shutdown'):
             shutdown()
         elif(message == 'Restart'):
@@ -56,7 +57,5 @@ def launchApex():
     print('\nLaunched Apex')
 
 if __name__ == '__main__':
-    os.system('D: & cd D:\Documents\Coding\remotePCShutdown\ && python -m http.server 5000')
-    print('App is running')
+    print('App is running\n')
     app.run(host='0.0.0.0', port=5000,debug=True)
-
