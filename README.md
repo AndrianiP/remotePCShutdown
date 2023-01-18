@@ -1,7 +1,7 @@
 # remotePCShutdown
  Text to Shutdown 
 
-Using Twilio service and Ngrok you are able to execute powershell/cmd commands which can allow you to shutdown your pc remotely, put it to sleep, or restart it.
+Using Twilio service and Ngrok you are able to execute certain powershell/cmd commands that are predetermined which can allow you to shutdown your pc remotely, put it to sleep, or restart it.
 
 Combine this with task scheduler and you can have it start running at boot.
 
